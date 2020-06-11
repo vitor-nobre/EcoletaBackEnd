@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { request, response } from 'express';
 import { errors } from 'celebrate'
 import cors from 'cors'
 import routes from './routes'
@@ -12,4 +12,4 @@ app.use(routes)
 app.use(errors())
 app.use('/uploads', express.static(path.resolve(__dirname,'..','uploads')))
 
-app.listen(3333,'https://ecoleta-back-end.herokuapp.com')
+app.listen(3333)
