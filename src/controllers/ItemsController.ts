@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import knex from '../database/connection'
-import host from '../config/host'
+
 
 class ItemsController {
     async index(request: Request, response: Response) {
