@@ -10,7 +10,7 @@ class ItemsController {
             return {
                 id: item.id,
                 title: item.title,
-                image_url: `${host}/uploads/${item.image}`
+                image_url: `https://ecoleta-back-end.herokuapp.com/uploads/${item.image}`
             }
         })
     

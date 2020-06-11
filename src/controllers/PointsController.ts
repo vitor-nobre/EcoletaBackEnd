@@ -1,6 +1,5 @@
 import { Request, Response } from 'express'
 import knex from '../database/connection'
-import host from '../config/host'
 
 class PointsController{
     async create(request: Request , response: Response ) {
@@ -60,7 +59,7 @@ class PointsController{
                    
         const serializedPoints = {
             ...point,
-            image_url: `${host}/uploads/${point.image}`
+            image_url: `https://ecoleta-back-end.herokuapp.com/uploads/${point.image}`
         }
         const items = await knex('items')
             .join('point_items', 'items.id', '=', 'point_items.item_id')
@@ -88,7 +87,7 @@ class PointsController{
             const serializedPoints = points.map(point => {
                 return {
                     ...point,
-                    image_url: `${host}/uploads/${point.image}`
+                    image_url: `https://ecoleta-back-end.herokuapp.com/uploads/${point.image}`
                 }
             })
 
